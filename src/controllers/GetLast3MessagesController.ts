@@ -1,14 +1,18 @@
-import {Request,Response}from "express"
-import { GetLast3MessagesService } from "../services/GetLast3MessagesService";
+import { Request, Response } from 'express';
+import { GetLast3MessagesService } from '../services/GetLast3MessagesService';
 
-class GetLast3MessagesController{
-    async handle(request:Request,response:Response){
+class GetLast3MessagesController {
+  async handle(req: Request, res: Response) {
 
-       const service =new GetLast3MessagesService();
+    const service = new GetLast3MessagesService();
 
-       const result =service.execute();
-
-       return response.json(result);
-    }  
+    try {
+      const result = await service.execute()
+      return res.json(result)
+    } catch (err) {
+      return res.json({ error: err.message })
+    }
+  }
 }
-export {GetLast3MessagesController};
+
+export { GetLast3MessagesController }

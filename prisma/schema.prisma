@@ -1,10 +1,10 @@
-generator client {
-  provider = "prisma-client-js"
-}
-
 datasource db {
   provider = "sqlite"
   url      = "file:./dev.db"
+}
+
+generator client {
+  provider = "prisma-client-js"
 }
 
 model User {
@@ -14,9 +14,8 @@ model User {
   avatar_url String
   login      String
 
-
-  messages Message[]
   @@map("users")
+  messages Message[]
 }
 
 model Message {
@@ -26,7 +25,6 @@ model Message {
 
   user User @relation(fields: [user_id], references: [id])
 
-
-  user_id String
   @@map("messages")
+  user_id String
 }
