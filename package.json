@@ -1,17 +1,8 @@
 {
-  "name": "nlw_heat_node_api",
+  "name": "node_heat",
   "version": "1.0.0",
-  "description": "A NOde.js API developed during the NLW Heat",
-  "main": "src/app.js",
+  "main": "index.js",
   "license": "MIT",
-  "author": {
-    "name": "Rodrigo Zandonadi",
-    "email": "rodrigo.zandonadi.dev@gmail.com",
-    "url": "https://github.com/rodrigozan"
-  },
-  "keywords": [
-    "nwl heat", "nodejs", "express", "dotenv", "prisma", "sqlite", "axios", "jsonwebtoken", "socket.io", "cors"
-  ],
   "scripts": {
     "dev": "ts-node-dev --exit-child src/server.ts"
   },
@@ -22,14 +13,13 @@
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
-    "socket.io": "^4.3.1"
+    "socket.io": "^4.3.0"
   },
   "devDependencies": {
     "@types/axios": "^0.14.0",
     "@types/cors": "^2.8.12",
     "@types/express": "^4.17.13",
     "@types/jsonwebtoken": "^8.5.5",
-    "@types/node": "^16.11.1",
     "@types/socket.io": "^3.0.2",
     "prisma": "3.2.1",
     "ts-node-dev": "^1.1.8",
